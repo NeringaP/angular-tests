@@ -6,18 +6,28 @@ describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  // beforeEach(async () => {
+  //   await TestBed.configureTestingModule({
+  //     declarations: [UserComponent]
+  //   })
+  //   .compileComponents();
+    
+  //   fixture = TestBed.createComponent(UserComponent);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [UserComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(UserComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create the app', () => {
+    fixture = TestBed.createComponent(UserComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  })
+
 });
